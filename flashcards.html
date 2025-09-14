@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="flashcards.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Menu Screen -->
+        <div id="main-menu" class="screen active">
+            <h1 class="app-title">Flashcards</h1>
+            <div class="unit-selector">
+                <button class="unit-btn" data-unit="1">Unit 1</button>
+                <button class="unit-btn" data-unit="2">Unit 2</button>
+                <button class="unit-btn" data-unit="3">Unit 3</button>
+                <button class="unit-btn" data-unit="4">Unit 4</button>
+                <button class="unit-btn" data-unit="5">Unit 5</button>
+                <button class="unit-btn" data-unit="6">Extras</button>
+            </div>
+        </div>
+
+        <!-- Flashcard Screen -->
+        <div id="flashcard-screen" class="screen">
+            <div class="flashcard-header">
+                <button id="back-btn" class="back-btn">Back</button>
+                <span id="unit-title" class="unit-title">Unit 1</span>
+                <span id="card-counter" class="card-counter">1 / 10</span>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-content">
+                    <div id="word" class="word">Loading...</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="need-help-btn" class="action-btn need-help">I need help</button>
+                <button id="got-it-btn" class="action-btn got-it">I got it</button>
+            </div>
+        </div>
+
+        <!-- Completion Screen -->
+        <div id="completion-screen" class="screen">
+            <div class="completion-content">
+                <h2 class="completion-title" id="completion-title">Unit Complete!</h2>
+                <p class="completion-message" id="completion-message">Great job! You've completed this unit.</p>
+                <div class="completion-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="correct-count">0</span>
+                        <span class="stat-label">Nailed It</span>
+                    </div>
+                    <div class="stat pointer" id="need-help-stat">
+                        <span class="stat-number" id="help-count">0</span>
+                        <span class="stat-label">Needs Review</span>
+                    </div>
+                </div>
+                <button id="return-menu-btn" class="action-btn return-menu">Return to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="flashcards.js"></script>
+</body>
+</html>

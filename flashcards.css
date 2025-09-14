@@ -1,0 +1,519 @@
+/* Modern CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 625px;
+    min-height: 750px;
+    position: relative;
+    padding: 25px;
+}
+
+/* Screen Management */
+.screen {
+    display: none;
+    width: 100%;
+    height: 100%;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Menu Styles */
+.app-title {
+    text-align: center;
+    font-size: 3.75rem;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 3.75rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.unit-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.unit-btn {
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    padding: 1.875rem 2.5rem;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.unit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 1);
+}
+
+.unit-btn:active {
+    transform: translateY(0);
+}
+
+/* Flashcard Screen Styles */
+.flashcard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    color: white;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 0.9375rem 1.25rem;
+    border-radius: 15px;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-2px);
+}
+
+.unit-title {
+    font-size: 1.875rem;
+    font-weight: 500;
+}
+
+.card-counter {
+    font-size: 1.25rem;
+    opacity: 0.8;
+}
+
+/* Flashcard Styles */
+.flashcard {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 3.75rem 2.5rem;
+    margin-bottom: 2.5rem;
+    min-height: 375px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 25px 75px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.flashcard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+}
+
+.flashcard-content {
+    text-align: center;
+    width: 100%;
+}
+
+.word {
+    font-size: 4.375rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 1.5625rem 1.875rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.need-help {
+    background: rgba(255, 107, 107, 0.9);
+    color: white;
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.3);
+}
+
+.need-help:hover {
+    background: rgba(255, 107, 107, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(255, 107, 107, 0.4);
+}
+
+.got-it {
+    background: rgba(72, 187, 120, 0.9);
+    color: white;
+    box-shadow: 0 8px 32px rgba(72, 187, 120, 0.3);
+}
+
+.got-it:hover {
+    background: rgba(72, 187, 120, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(72, 187, 120, 0.4);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+}
+
+/* Completion Screen Styles */
+.completion-content {
+    text-align: center;
+    color: white;
+    padding: 2.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.completion-title {
+    font-size: 3.125rem;
+    font-weight: 300;
+    margin-bottom: 1.25rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.completion-message {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+}
+
+.completion-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3.75rem;
+    margin-bottom: 3.75rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.875rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    min-width: 125px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.625rem;
+}
+
+.stat-label {
+    font-size: 1.125rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.return-menu {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 1.5625rem 2.5rem;
+    font-size: 1.375rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.return-menu:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .app-container {
+        padding: 18.75px;
+    }
+    
+    .app-title {
+        font-size: 3.125rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .word {
+        font-size: 2.5rem;
+    }
+    
+    .flashcard {
+        padding: 2.5rem 1.875rem;
+        min-height: 312.5px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .completion-stats {
+        gap: 1.875rem;
+    }
+}
+
+/* Fireworks Animation for Completion Screen */
+#completion-screen.active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+}
+
+.firework {
+    position: fixed;
+    pointer-events: none;
+    z-index: 2;
+    width: 6px;
+    height: 6px;
+}
+
+/* Create multiple particles for explosion effect */
+.firework::before,
+.firework::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.firework::before {
+    color: #ff6b6b;
+    animation: explode-particle-1 2s ease-out forwards;
+}
+
+.firework::after {
+    color: #4ecdc4;
+    animation: explode-particle-2 2s ease-out forwards;
+}
+
+/* Create additional particles using box-shadow */
+.firework {
+    animation: firework-center 2s ease-out forwards;
+    background: radial-gradient(circle, #ffe66d 2px, transparent 3px);
+}
+
+@keyframes firework-center {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+        box-shadow: 
+            0 0 0 0 #ff6b6b,
+            0 0 0 0 #4ecdc4,
+            0 0 0 0 #ffe66d,
+            0 0 0 0 #ff8b94,
+            0 0 0 0 #95e1d3,
+            0 0 0 0 #a8e6cf,
+            0 0 0 0 #ffd93d,
+            0 0 0 0 #6bcf7f;
+    }
+    15% {
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 
+            20px 0 6px 2px #ff6b6b,
+            -20px 0 6px 2px #4ecdc4,
+            0 20px 6px 2px #ffe66d,
+            0 -20px 6px 2px #ff8b94,
+            15px 15px 6px 2px #95e1d3,
+            -15px -15px 6px 2px #a8e6cf,
+            15px -15px 6px 2px #ffd93d,
+            -15px 15px 6px 2px #6bcf7f;
+    }
+    30% {
+        transform: scale(1.2);
+        opacity: 0.8;
+        box-shadow: 
+            40px 0 8px 1px #ff6b6b,
+            -40px 0 8px 1px #4ecdc4,
+            0 40px 8px 1px #ffe66d,
+            0 -40px 8px 1px #ff8b94,
+            30px 30px 8px 1px #95e1d3,
+            -30px -30px 8px 1px #a8e6cf,
+            30px -30px 8px 1px #ffd93d,
+            -30px 30px 8px 1px #6bcf7f;
+    }
+    60% {
+        transform: scale(1.5);
+        opacity: 0.4;
+        box-shadow: 
+            60px 5px 12px 0px #ff6b6b,
+            -60px -5px 12px 0px #4ecdc4,
+            5px 60px 12px 0px #ffe66d,
+            -5px -60px 12px 0px #ff8b94,
+            45px 45px 12px 0px #95e1d3,
+            -45px -45px 12px 0px #a8e6cf,
+            45px -45px 12px 0px #ffd93d,
+            -45px 45px 12px 0px #6bcf7f;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+        box-shadow: 
+            80px 10px 20px 0px transparent,
+            -80px -10px 20px 0px transparent,
+            10px 80px 20px 0px transparent,
+            -10px -80px 20px 0px transparent,
+            60px 60px 20px 0px transparent,
+            -60px -60px 20px 0px transparent,
+            60px -60px 20px 0px transparent,
+            -60px 60px 20px 0px transparent;
+    }
+}
+
+@keyframes explode-particle-1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+        box-shadow: 0 0 6px currentColor;
+    }
+    100% {
+        transform: translate(70px, -70px) scale(0);
+        opacity: 0;
+        box-shadow: 0 0 20px currentColor;
+    }
+}
+
+@keyframes explode-particle-2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+        box-shadow: 0 0 6px currentColor;
+    }
+    100% {
+        transform: translate(-70px, 70px) scale(0);
+        opacity: 0;
+        box-shadow: 0 0 20px currentColor;
+    }
+}
+
+/* Sparkle effect */
+.sparkle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 3;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: sparkle-twinkle 1.5s ease-in-out infinite;
+}
+
+.sparkle:nth-child(1) { 
+    top: 15%; 
+    left: 15%; 
+    animation-delay: 0s; 
+    background: #ff6b6b;
+}
+.sparkle:nth-child(2) { 
+    top: 25%; 
+    left: 85%; 
+    animation-delay: 0.2s; 
+    background: #4ecdc4;
+}
+.sparkle:nth-child(3) { 
+    top: 75%; 
+    left: 25%; 
+    animation-delay: 0.4s; 
+    background: #ffe66d;
+}
+.sparkle:nth-child(4) { 
+    top: 65%; 
+    left: 75%; 
+    animation-delay: 0.6s; 
+    background: #ff8b94;
+}
+.sparkle:nth-child(5) { 
+    top: 45%; 
+    left: 55%; 
+    animation-delay: 0.8s; 
+    background: #95e1d3;
+}
+.sparkle:nth-child(6) { 
+    top: 35%; 
+    left: 45%; 
+    animation-delay: 1s; 
+    background: #a8e6cf;
+}
+
+@keyframes sparkle-twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+        box-shadow: 0 0 0 currentColor;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+        box-shadow: 
+            0 0 10px currentColor,
+            0 0 20px currentColor,
+            0 0 30px currentColor;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
